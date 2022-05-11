@@ -1,0 +1,18 @@
+version: "2"
+
+options:
+  verbose: true
+  compose-file-path: 'docker-compose.yml'
+  cli_mode: 'auto'
+  max_attempt: 3000
+
+syncs:
+  appdata-sync:
+    notify_terminal: true
+    src: ./src
+    sync_strategy: 'unison'
+    sync_excludes: [
+      'BelowPath .DS_Store'
+    ]
+    sync_userid: '1000'
+    max_attempt: 10
