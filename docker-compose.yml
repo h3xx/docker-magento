@@ -21,7 +21,7 @@ services:
     volumes: &appvolumes
       - ~/.composer:/var/www/.composer:cached
       - ~/.ssh/known_hosts:/var/www/.ssh/known_hosts:cached
-      - appdata-sync:/var/www/html:nocopy,delegated
+      - appdata:/var/www/html
       - sockdata:/sock
       - ssldata:/etc/nginx/certs
     extra_hosts: &appextrahosts
@@ -103,8 +103,7 @@ services:
   #  extra_hosts: *appextrahosts
 
 volumes:
-  appdata-sync:
-    external: true
+  appdata:
   dbdata:
   rabbitmqdata:
   sockdata:
