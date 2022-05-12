@@ -49,6 +49,7 @@ services:
     env_file: env/db.env
     volumes:
       - dbdata:/var/lib/mysql
+      - ./mysql/conf.d/slow_query_log.cnf:/etc/mysql/conf.d/slow_query_log.cnf
     extra_hosts: *appextrahosts
 
   redis:
