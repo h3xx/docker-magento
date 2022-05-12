@@ -54,7 +54,7 @@ done
 
 DOCKER_COMPOSE_YAMLS=(
   docker-compose.yml
-  docker-compose.dev.yml
+  docker-compose.dev-linux.yml
 )
 
 DOCKER_COMPOSE_ARGS=()
