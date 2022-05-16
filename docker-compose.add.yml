@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  app:
+    volumes: &appvolumes
+      # For "n98-magerun2 dev:console"
+      - ~/.config/psysh:/var/www/.config/psysh:cached
+
+  phpfpm:
+    volumes: *appvolumes
