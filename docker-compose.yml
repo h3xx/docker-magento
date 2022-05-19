@@ -45,6 +45,7 @@ services:
     image: mariadb:10.4
     command: |
       --innodb-buffer-pool-size=5000000000
+      --innodb-flush-log-at-trx-commit=0
       --innodb-flush-method=nosync
       --max_allowed_packet=64M
     ports:
