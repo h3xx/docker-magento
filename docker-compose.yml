@@ -43,7 +43,9 @@ services:
 
   db:
     image: mariadb:10.4
-    command: --max_allowed_packet=64M
+    command: |
+      --innodb-buffer-pool-size=5000000000
+      --max_allowed_packet=64M
     ports:
       - "3306:3306"
     env_file: env/db.env
