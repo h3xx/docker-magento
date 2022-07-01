@@ -5,6 +5,7 @@ services:
     volumes: &appvolumes
       ## Host mounts with performance penalty, only put what is necessary here
       - ./src/app:/var/www/html/app:cached
+      - ./src/pub:/var/www/html/pub:cached
       - ./src/composer.json:/var/www/html/composer.json:cached
       - ./src/composer.lock:/var/www/html/composer.lock:cached
       - ./src/nginx.conf.sample:/var/www/html/nginx.conf:cached
