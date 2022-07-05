@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  app:
+    volumes: &appvolumes
+      # Magento Cloud support
+      - ./src:/app:cached
+      - ./src/php.ini:/usr/local/etc/php/conf.d/local-php.ini:cached
+
+  phpfpm:
+    volumes: *appvolumes

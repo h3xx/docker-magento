@@ -58,6 +58,10 @@ DOCKER_COMPOSE_YAMLS=(
   docker-compose.add.yml
 )
 
+if [[ -f src/php.ini && -f src/magento-vars.php ]]; then
+  DOCKER_COMPOSE_YAMLS+=(docker-compose.magento-cloud.yml)
+fi
+
 DOCKER_COMPOSE_ARGS=()
 for YAML in "${DOCKER_COMPOSE_YAMLS[@]}"; do
   DOCKER_COMPOSE_ARGS+=(-f "$YAML")
