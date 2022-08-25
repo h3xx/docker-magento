@@ -68,6 +68,9 @@ for YAML in "${DOCKER_COMPOSE_YAMLS[@]}"; do
 done
 DOCKER_COMPOSE_ARGS+=(
   up -d
+  # Make sure if docker-compose.yml contains a "build: ..." line, to build the
+  # image (light operation if the Dockerfile isn't modified)
+  --build
   --remove-orphans
 )
 
